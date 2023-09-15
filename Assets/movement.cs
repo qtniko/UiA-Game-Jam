@@ -8,6 +8,7 @@ public class movement : MonoBehaviour
     // Referanser
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private CapsuleCollider2D coll;
+    [SerializeField] private Transform playerTransform;
     [SerializeField] private Transform groundCheck;
 
     // Inputs
@@ -80,6 +81,7 @@ public class movement : MonoBehaviour
             moveDir = move;
             if (previousDir != moveDir)
             {
+                playerTransform.localScale = new Vector3(moveDir, playerTransform.localScale.y, playerTransform.localScale.z);
                 currentSpeed = movementSpeed * 0.5f;
             }
         }
