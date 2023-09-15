@@ -43,15 +43,21 @@ public class movement : MonoBehaviour
     void FixedUpdate()
     {
         // Horisontal bevegelse
-        if (currentSpeed < movementSpeed)
+        if (move != 0) 
         {
-            currentSpeed += acceleration * accelerationControl;
+            if (currentSpeed < movementSpeed)
+            {
+                currentSpeed += acceleration * accelerationControl;
+            }
+            else
+            {
+                currentSpeed = movementSpeed;
+            }
+            Debug.Log("Movign");
         }
-        else
-        {
-            currentSpeed = movementSpeed;
-        }
+
         rb.velocity = new Vector2(moveDir * currentSpeed, rb.velocity.y);
+        
 
         // Vertikal bevegelse
         if (isJumping && isGrounded)
@@ -64,18 +70,23 @@ public class movement : MonoBehaviour
     
     void Update()
     {
-        move = Input.GetAxis("Horizontal");
+        move = Input.GetAxisRaw("Horizontal");
+
         jump = Input.GetKey("space");
 
         if (move != 0)
         {
-            Debug.Log(move);
             float previousDir = moveDir;
             moveDir = move;
             if (previousDir != moveDir)
             {
                 currentSpeed = movementSpeed * 0.5f;
             }
+        }
+        else
+        {
+            moveDir = 0;
+            currentSpeed = 1;
         }
 
         if (jump)

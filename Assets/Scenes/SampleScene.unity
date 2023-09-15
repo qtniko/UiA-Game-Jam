@@ -54422,7 +54422,7 @@ MonoBehaviour:
   rb: {fileID: 1561283710}
   coll: {fileID: 1561283714}
   groundCheck: {fileID: 475148363}
-  movementSpeed: 10
+  movementSpeed: 8
   acceleration: 5
   jumpForce: 8
   isGrounded: 0
@@ -54444,8 +54444,8 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0.5
-  m_Material: {fileID: 0}
+  m_GravityScale: 0.6
+  m_Material: {fileID: 6200000, guid: 08853c2c55bbc4e1eb52712a53c6c156, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
