@@ -1,7 +1,7 @@
 # UiA-Game-Jam
-yeet
-skeet 
-and 
-fleet
-Vi vant gutta!
+yeet <br>
+skeet <br>
+and <br>
+fleet <br>
+Vi vant gutta! <br>
 Det er ganske pog
